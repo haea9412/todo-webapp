@@ -2,6 +2,9 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
 import styled from 'styled-components'; //homepage layout
 
+import TodoInput from 'app/components/TodoInput'; //다른 폴더에 만든 컴포넌트 사용
+import TodoItem from 'app/components/TodoItem';
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh; //full
@@ -26,15 +29,6 @@ const Title = styled.h1`
 
 const TodoList = styled.div``;
 
-const TodoItem = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 15px 25px;
-  width: 100%;
-  font-size: 1.2em;
-  border-bottom: 1px solid #eee;
-`;
-
 const TodoCheck = styled.input`
   margin-right: 15px;
 `;
@@ -49,10 +43,16 @@ export function HomePage() {
       <Wrapper>
         <Box>
           <Title> To Do List</Title>
+          <TodoInput></TodoInput>
           <TodoList>
-            <TodoItem>
-              <TodoCheck type="checkbox" /> this is todo box
-            </TodoItem>
+            <TodoItem
+              todo={{
+                id: '1',
+                completed: false,
+                content: 'this is todo. 1',
+                editing: false,
+              }}
+            ></TodoItem>
           </TodoList>
         </Box>
       </Wrapper>
