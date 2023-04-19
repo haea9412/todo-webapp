@@ -18,7 +18,7 @@
     "jsx": "react-jsx",
     "baseUrl": "./src"
   },
-  "include": ["src", "**/*.ts", "**/*.tsx", "**/**/*.ts", "**/**/*.tsx"],
+  "include": ["src", "src/**/*.ts", "src/**/*.tsx"],
   "ts-node": {
     "compilerOptions": {
       "esModuleInterop": true,
